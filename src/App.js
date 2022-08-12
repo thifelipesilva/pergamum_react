@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { Container } from '@mui/system';
+import { useState } from 'react';
+import Form from './components/Form';
+import Header from './components/Header';
+
+const App = () => {
+
+  const [data, setData] = useState([]);
+  const dataAdd = (data) => {
+    console.log(data);
+    setData([...data, data]);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+
+      <Header/>
+      <Container>
+        <Form dataSubimited={data => dataAdd(data)} />
+      </Container>
+      
     </div>
   );
 }
