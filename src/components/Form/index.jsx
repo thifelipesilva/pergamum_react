@@ -12,7 +12,7 @@ const Form = (props) => {
     const [anotation, setAnotation] = useState('');
 
     //elevando os dados para o pai
-    const senData = event => {
+    const sendData = event => {
         event.preventDefault();
         props.dataSubimited({
             firstName,
@@ -21,7 +21,11 @@ const Form = (props) => {
             year,
             anotation
         });
-
+        setFirstName('');
+        setlastName('');
+        setPage('');
+        setYear('');
+        setAnotation('');
     }
 
     return (
@@ -32,9 +36,9 @@ const Form = (props) => {
                     flexDirection: 'column',
 
                     heigth: 'auto',
-                    width: 300,
-
-                    p: 2
+                    width: 400,
+                    m: 1,
+                    p: 1
                 }
             }
 
@@ -71,8 +75,7 @@ const Form = (props) => {
 
             <Input
              id='year'
-             label='ano de publicação'
-             type='number'
+             type='date'
              value={year}
              changed={year => setYear(year)}
             />
@@ -84,7 +87,7 @@ const Form = (props) => {
             />
 
             <Button
-                onClick={senData}
+                onClick={sendData}
                 type="submit"
                 sx={
                     {

@@ -10,4 +10,12 @@
 body {
     font-family: 'Roboto', sans-serif;
     background: #dfdfdf;
+    height: 100%;
 }
+
+
+.main {
+    display: flex;
+}
+
+

@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material"
 
 const Input = (props) => {
-    //recebendo os dados do pai
+    //enviando os dados do pai
     const typed = event => {
         props.changed(event.target.value);
     }
@@ -14,7 +14,7 @@ const Input = (props) => {
             type={props.type}
             margin="dense"
             size="small" 
-            onChange={typed}   
+            onChange={typed}   //
             value={props.value}   
         />
         
