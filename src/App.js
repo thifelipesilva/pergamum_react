@@ -12,9 +12,13 @@ const App = () => {
 
   const [data, setData] = useState([]);
   
-  const dataAdd = (data) => {
+  const dataAdd = (tobeAdded) => {
+    setData([...data, tobeAdded]);
+  }
+
+  const deleteNote = () => {
+    console.log('deletou');
     
-    setData([ data]);
   }
 
   return (
@@ -23,8 +27,8 @@ const App = () => {
       <Header/>
       
       <section className='main'>
-        <Form dataSubimited={data => dataAdd(data)} />
-        <Wall data={data}/>
+        <Form dataSubimited={tobeAdded => dataAdd(tobeAdded)} />
+        <Wall data={data} deleteNote={deleteNote}/>
       </section>
 
     </div>

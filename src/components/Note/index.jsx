@@ -1,6 +1,8 @@
 import { Card, CardContent, Grid, Typography } from "@mui/material";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-const Note = ({ anotation, firstName, lastName, page, year, index }) => {
+const Note = ({ anotation, index, firstName, lastName, page, year, deleteNote }) => {
     return (
         <Grid item key={index} >
 
@@ -26,7 +28,8 @@ const Note = ({ anotation, firstName, lastName, page, year, index }) => {
                     <Typography>
                         {`${lastName}, ${firstName} - ${page}, ${year}`}
                     </Typography>
-
+                    <EditIcon fontSize="small"/>
+                    <DeleteIcon fontSize="small" onClick={deleteNote}/>
                 </CardContent>
 
 

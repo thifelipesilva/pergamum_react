@@ -5,7 +5,6 @@ const Header = () => {
     return (
         <Box sx={ 
             {
-                p: 2,
                 width: '100%',
                 height: 80,
                 borderBottom: 1,

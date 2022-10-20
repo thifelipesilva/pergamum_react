@@ -2,14 +2,17 @@ import { Grid } from "@mui/material";
 import Note from "../Note";
 
 
-
 const Wall = (props) => {
+
+    
+
     return (
         
         <Grid container spacing={3} justify='center' p={2} ml={2} >
 
 
             {
+                //passando dados para o filho
                 props.data.map(
 
                     (data, index) => {
@@ -21,6 +24,7 @@ const Wall = (props) => {
                              page={data.page}
                              year={data.year}
                              anotation={data.anotation}
+                             deleteNote={props.deleteNote}
                             />
                         )
                     }
